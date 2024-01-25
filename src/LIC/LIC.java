@@ -6,5 +6,5 @@ import parameters.Parameters;
  */
 public interface LIC {
     
-    public boolean evaluate(Parameters p); 
+    public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY); 
 }
