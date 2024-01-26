@@ -28,4 +28,23 @@ public class LICTest {
         assertFalse(lic0.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
     }
 
+    @Test
+    public void assertThatLIC1ReturnsTrueWithValidCriteria(){
+        p.RADIUS1 = 1.0;
+        int NUMPOINTS = 3;
+        double[] POINTSX = {1.0, 2.0, 3.0};
+        double[] POINTSY = {1.0, 2.0, 3.0};
+        LIC1 lic1 = new LIC1();
+        assertTrue(lic1.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
+    }
+
+    @Test
+    public void assertThatLIC1ReturnsFalseWithInvalidCriteria() {
+        p.RADIUS1 = 3.0;
+        int NUMPOINTS = 3;
+        double[] POINTSX = {1.0, 2.0, 3.0};
+        double[] POINTSY = {1.0, 2.0, 3.0};
+        LIC1 lic1 = new LIC1();
+        assertFalse(lic1.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
+    }
 }
