@@ -8,16 +8,6 @@ public class LICTest {
 
     Parameters p = new Parameters();
 
-    @Test
-    public void coordinateArraysSameLengthAsNUMPOINTS() {
-        int NUMPOINTS = 8;
-        double[] POINTSXsameLength = {0.763, 1.245, 0.982, 2.573, 0.431, 1.789, 0.624, 3.142};
-        double[] POINTSYsameLength = {0.891, 1.674, 0.512, 2.315, 0.743, 1.892, 0.421, 3.789};
-
-        assertEquals(POINTSXsameLength.length, NUMPOINTS);
-        assertEquals(POINTSYsameLength.length, NUMPOINTS);
-    }
-
     @Test 
     public void assertsThatLIC0ReturnsTrueWithValidCriteria() {
         p.LENGTH1 = 0.5;
