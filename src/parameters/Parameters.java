@@ -6,34 +6,30 @@ package parameters;
  */
 
 public class Parameters {
-
-    public final double LENGTH1;
-    public final double RADIUS1;
-    public final double EPSILON;
-    public final double AREA1;
+    public double LENGTH1;
+    public double RADIUS1;
+    public double EPSILON;
+    public double AREA1;
     
-    public final int Q_PTS;
-    public final int QUADS;
-    public final double DIST;
-    public final int N_PTS;
-    public final int K_PTS;
-    public final int A_PTS;
-    public final int B_PTS;
-    public final int C_PTS;
-    public final int D_PTS;
-    public final int E_PTS;
-    public final int F_PTS;
-    public final int G_PTS;
+    public int Q_PTS;
+    public int QUADS;
+    public double DIST;
+    public int N_PTS;
+    public int K_PTS;
+    public int A_PTS;
+    public int B_PTS;
+    public int C_PTS;
+    public int D_PTS;
+    public int E_PTS;
+    public int F_PTS;
+    public int G_PTS;
     
-    public final double LENGTH2;
-    public final double RADIUS2;
-    public final double AREA2;
+    public double LENGTH2;
+    public double RADIUS2;
+    public double AREA2;
 
-
-    // TODO: fill this with the parameters from the assignment description
-
-    public Parameters(double LENGTH1, double RADIUS1, double EPSILON, double AREA1, int Q_PTS, int QUADS, double DIST, int N_PTS, int K_PTS, int A_PTS, int B_PTS, int C_PTS, int D_PTS, int E_PTS, int F_PTS, int G_PTS, double LENGTH2, double RADIUS2, double AREA2)
-     {
+    public Parameters(double LENGTH1, double RADIUS1, double EPSILON, double AREA1, int Q_PTS, int QUADS, double DIST, int N_PTS, int K_PTS,
+        int A_PTS, int B_PTS, int C_PTS, int D_PTS, int E_PTS, int F_PTS, int G_PTS, double LENGTH2, double RADIUS2, double AREA2) {
         this.LENGTH1 = LENGTH1;
         this.RADIUS1 = RADIUS1;
         this.EPSILON = EPSILON;
@@ -53,5 +49,29 @@ public class Parameters {
         this.LENGTH2 = LENGTH2;
         this.RADIUS2 = RADIUS2;
         this.AREA2 = AREA2;
+    }
+
+    public Parameters() {
+        this.LENGTH1 = 0.0;
+        this.RADIUS1 = 0.0;
+        this.EPSILON = 0.0;
+        this.AREA1 = 0.0;
+        
+        this.Q_PTS = 0;
+        this.QUADS = 0;
+        this.DIST = 0.0;
+        this.N_PTS = 0;
+        this.K_PTS = 0;
+        this.A_PTS = 0;
+        this.B_PTS = 0;
+        this.C_PTS = 0;
+        this.D_PTS = 0;
+        this.E_PTS = 0;
+        this.F_PTS = 0;
+        this.G_PTS = 0;
+        
+        this.LENGTH2 = 0.0;
+        this.RADIUS2 = 0.0;
+        this.AREA2 = 0.0;
     }
 }
