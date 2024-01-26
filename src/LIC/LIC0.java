@@ -18,8 +18,8 @@ public class LIC0 implements LIC {
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
 
-        for(int i = 1; i <= NUMPOINTS; i++){
-            if(dist(POINTSX[i-1], POINTSY[i-1], POINTSX[i], POINTSY[i]) > p.LENGTH1){
+        for(int i = 0; i < NUMPOINTS-1 ; i++){
+            if(dist(POINTSX[i], POINTSY[i], POINTSX[i+1], POINTSY[i+1]) > p.LENGTH1){
                 return true;
             }
         }
