@@ -12,7 +12,7 @@ public class LIC12Test {
      * Tests that the function evaluates to false when supposed to
      */
     @Test
-    public void TestEnoughNumPoints() {
+    public void assertThatTooFewPointsReturnFalse() {
         Parameters p = new Parameters();
 
         int NUMPOINTS = 2;
@@ -24,7 +24,7 @@ public class LIC12Test {
     }
 
     @Test
-    public void TestLength2Negative() {
+    public void assertThatLength2NegativeReturnsFalse() {
         Parameters p = new Parameters();
         p.LENGTH2 = -1.0;
 
@@ -37,7 +37,7 @@ public class LIC12Test {
     }
 
     @Test
-    public void TestKptsGreaterThanNumPoints() {
+    public void assertThatKptsGreaterThanNumPointsReturnsFalse() {
         Parameters p = new Parameters();
         p.K_PTS = 2;
 
@@ -50,7 +50,7 @@ public class LIC12Test {
     }
 
     @Test
-    public void TestDistLessThanLength1() {
+    public void assertThatDistLessThanLength1ReturnsFalse() {
         Parameters p = new Parameters();
         p.K_PTS = 1;
         p.LENGTH1 = 10.0;
@@ -64,7 +64,7 @@ public class LIC12Test {
     }
 
     @Test
-    public void TestDistGreaterThanLength2() {
+    public void assertThatDistGreaterThanLength2ReturnsFalse() {
         Parameters p = new Parameters();
         p.K_PTS = 1;
         p.LENGTH1 = 1.0;
@@ -83,7 +83,7 @@ public class LIC12Test {
      * Tests that the function evaluates to true when supposed to
      */
     @Test
-    public void TestValidCriteria() {
+    public void assertThatValidCriteriaReturnsTrue() {
         Parameters p = new Parameters();
         p.K_PTS = 1;
         p.LENGTH1 = 1.0;
