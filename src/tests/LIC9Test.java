@@ -8,7 +8,7 @@ public class LIC9Test {
     Parameters p = new Parameters();
     
     @Test
-    public void assertThatValidCriteriaWithLargeEpsilonReturnsTrue() {
+    public void assertThatValidCriteriaWithLargeEpsilonReturnTrue() {
         p.C_PTS = 1;
         p.D_PTS = 1;
         p.EPSILON = 3;
@@ -21,7 +21,7 @@ public class LIC9Test {
     }
 
     @Test
-    public void assertThatValidCriteriaWithSmallEpsilonReturnsTrue() {
+    public void assertThatValidCriteriaWithSmallEpsilonReturnTrue() {
         p.C_PTS = 1;
         p.D_PTS = 1;
         p.EPSILON = 0.1;
@@ -34,7 +34,7 @@ public class LIC9Test {
     }
 
     @Test
-    public void assertThatValidCriteriaReturnsFalse() {
+    public void assertThatValidCriteriaReturnFalse() {
         p.C_PTS = 1;
         p.D_PTS = 1;
         p.EPSILON = 3;
@@ -48,8 +48,8 @@ public class LIC9Test {
 
     @Test
     public void assertThatTooFewPointsReturnFalse() {
-        p.C_PTS = 2;
-        p.D_PTS = 3;
+        p.C_PTS = 1;
+        p.D_PTS = 1;
         p.EPSILON = 0.01;
         int NUMPOINTS = 4;
 
@@ -62,7 +62,7 @@ public class LIC9Test {
     @Test
     public void assertThatCPTSLessThan1ReturnFalse() {
         p.C_PTS = 0;
-        p.D_PTS = 3;
+        p.D_PTS = 1;
         p.EPSILON = 0.01;
         int NUMPOINTS = 8;
 
@@ -74,7 +74,7 @@ public class LIC9Test {
 
     @Test
     public void assertThatDPTSLessThan1ReturnFalse() {
-        p.C_PTS = 2;
+        p.C_PTS = 1;
         p.D_PTS = 0;
         p.EPSILON = 0.01;
         int NUMPOINTS = 8;
@@ -86,7 +86,7 @@ public class LIC9Test {
     }
 
     @Test
-    public void assertThatCPTSPlusDPTSGreaterThaNumPoints1ReturnFalse() {
+    public void assertThatCPTSPlusDPTSGreaterThanNumPointsReturnFalse() {
         p.C_PTS = 2;
         p.D_PTS = 4;
         p.EPSILON = 0.01;
