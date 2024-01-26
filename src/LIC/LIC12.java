@@ -29,7 +29,8 @@ public class LIC12 implements LIC {
         boolean existsDistGreaterThanLength1 = false;
         boolean existsDistLessThanLength2 = false;
         int distToOtherPoint = 1 + p.K_PTS;
-        for (int point = 0; point < NUMPOINTS-distToOtherPoint; point++) {
+        for (int point = 0; point < NUMPOINTS-distToOtherPoint && 
+                !(existsDistGreaterThanLength1 && existsDistLessThanLength2); point++) {
             int otherPoint = point + distToOtherPoint;
             double distance = Math.sqrt(
                 Math.pow(POINTSX[point] - POINTSX[otherPoint], 2) +
