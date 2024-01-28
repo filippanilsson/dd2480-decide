@@ -47,4 +47,14 @@ public class LICTest {
         LIC1 lic1 = new LIC1();
         assertFalse(lic1.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
     }
+
+    @Test
+    public void assertThatLIC2ReturnsFalseWithUndefinedAngle() {
+        p.EPSILON = Math.PI/2;
+        int NUMPOINTS = 3;
+        double[] POINTSX = {1.0, 1.0, 3.0};
+        double[] POINTSY = {1.0, 1.0, 3.0};
+        LIC2 lic2 = new LIC2();
+        assertFalse(lic2.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
+    }
 }
