@@ -28,31 +28,5 @@ public class LIC7 implements LIC {
         }
         return false;
     }
-
-    
-    /*@Test
-    public static void testLIC7Positive() {
-        //Example 1 from the contract: evaluate(p,NUMPOINTS,POINTSX,POINTSY) should return True.
-        Parameters p = new Parameters(4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-        int NUMPOINTS = 6;
-        double[] POINTSX = new double[]{0.5, 1.2, 1.5, 1.8, 2.1, 4.0};
-        double[] POINTSY = new double[]{0.4, 3.1, 1.0, 3.0, 5.7, 3.1};
-        assertTrue((new LIC7()).evaluate(p,NUMPOINTS,POINTSX,POINTSY));
-    }
-    
-    @Test
-    public static void testLIC7Negative() {
-        //Example 2 from the contract: evaluate(p,NUMPOINTS,POINTSX,POINTSY) should return False.
-        Parameters p = new Parameters(4, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-        int NUMPOINTS = 6;
-        double[] POINTSX = new double[]{0.5, 1.2, 1.5, 1.8, 2.1, 4.0};
-        double[] POINTSY = new double[]{0.4, 3.1, 1.0, 3.0, 5.7, 3.1};
-        assertFalse((new LIC7()).evaluate(p,NUMPOINTS,POINTSX,POINTSY));
-    }
-
-    public static void main(String[] a) {
-        testLIC7Positive();
-        testLIC7Negative();
-    }*/
 }
 
