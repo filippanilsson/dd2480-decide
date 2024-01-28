@@ -40,19 +40,15 @@ public class LIC9 implements LIC {
             double x3 = POINTSX[i + p.C_PTS + p.D_PTS + 2];
             double y3 = POINTSY[i + p.C_PTS + p.D_PTS + 2];
 
-            // Check if the set of three points is always the vertex of the angle
-            if (!arePointsCoincident(x1, y1, x2, y2) && !arePointsCoincident(x2, y2, x3, y3) && !arePointsCoincident(x1, y1, x3, y3)) {
-                double angle1 = angle(x1, y1, x2, y2, x3, y3);
-                double angle2 = angle(x2, y2, x1, y1, x3, y3); 
-                double angle3 = angle(x3, y3, x1, y1, x2, y2);
+            // Check if the angle is defined
+            if (!arePointsCoincident(x1, y1, x2, y2) && !arePointsCoincident(x2, y2, x3, y3)) {
+                double angle = angle(x1, y1, x2, y2, x3, y3);
     
                 double epsilon1 = Math.PI - p.EPSILON;
                 double epsilon2 = Math.PI + p.EPSILON;
     
-                // Check if any of the angles satisfy the condition
-                if (angle1 < epsilon1 || angle1 > epsilon2 ||
-                    angle2 < epsilon1 || angle2 > epsilon2 ||
-                    angle3 < epsilon1 || angle3 > epsilon2) {
+                // Check if the second point of the set of three points is always the vertex of the angle.
+                if (angle < epsilon1 || angle > epsilon2) {
                     return true;
                 }
             }

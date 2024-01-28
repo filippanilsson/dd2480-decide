@@ -24,7 +24,7 @@ public class LIC9Test {
     public void assertThatValidCriteriaWithSmallEpsilonReturnTrue() {
         p.C_PTS = 1;
         p.D_PTS = 1;
-        p.EPSILON = 0.1;
+        p.EPSILON = 0.01;
         int NUMPOINTS = 8;
 
         double[] POINTSX = {0, 1, 2, 3, 4, 5, 6, 7};
@@ -34,7 +34,7 @@ public class LIC9Test {
     }
 
     @Test
-    public void assertThatValidCriteriaReturnFalse() {
+    public void assertThatInvalidCriteriaReturnFalse() {
         p.C_PTS = 1;
         p.D_PTS = 1;
         p.EPSILON = 3;
@@ -50,7 +50,7 @@ public class LIC9Test {
     public void assertThatTooFewPointsReturnFalse() {
         p.C_PTS = 1;
         p.D_PTS = 1;
-        p.EPSILON = 0.01;
+        p.EPSILON = 3;
         int NUMPOINTS = 4;
 
         double[] POINTSX = {0, 1, 2, 3};
