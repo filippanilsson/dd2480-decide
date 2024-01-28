@@ -21,7 +21,7 @@ public class LIC10Test {
     }
 
     @Test
-    public void assertThatValidCriteriaReturnFalse() {
+    public void assertThatInvalidCriteriaReturnFalse() {
         p.E_PTS = 1;
         p.F_PTS = 1;
         p.AREA1 = 3;
