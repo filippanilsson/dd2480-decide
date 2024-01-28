@@ -1,6 +1,16 @@
 package LIC;
 import parameters.Parameters;
 
+/** 
+ *   There exists at least one set of three consecutive data points which form an angle such that:
+ *   angle < (PI−EPSILON)
+ *  or
+ *   angle > (PI+EPSILON)
+ *   The second of the three consecutive points is always the vertex of the angle. If either the first
+ *   point or the last point (or both) coincides with the vertex, the angle is undefined and the LIC
+ *   is not satisfied by those three points.
+ *   (0 ≤ EPSILON < PI)
+*/
 public class LIC2 {
     
     /**
@@ -12,6 +22,12 @@ public class LIC2 {
      * @return a boolean stating whether the 2:nd LIC is satisfied
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
+
+        assert(0 <= p.EPSILON && p.EPSILON < Math.PI);
+
+        if (NUMPOINTS < 3) {
+            return false;
+        }
         
         for (int i = 0; i < NUMPOINTS-2; i++){
             // Point A
@@ -28,20 +44,19 @@ public class LIC2 {
                 return false;
             }
 
-            // Measure distances of lines AB and BC
-            double dist1 = dist(x1, y1, x2, y2); 
-            double dist2 = dist(x2, y2, x3, y3);
-
-            double angle = Math.atan(dist1/dist2);
+            double angle1 = Math.atan2(y1 - y2, x1 - x2);
+            double angle2 = Math.atan2(y3 - y2, x3 - x2);
+            double angle = angle1 - angle2;
+        
+            // Ensure the angle is between 0 and 2π
+            if (angle < 0) {
+                angle += 2 * Math.PI;
+            }
+            
             if (angle < (Math.PI - p.EPSILON) || angle > (Math.PI + p.EPSILON)) {
                 return true;
             }
         }
         return false;
     }
-
-    private double dist(double x1, double y1, double x2, double y2) {
-       double dist = Math.sqrt(Math.pow(x2-x1,2)+ Math.pow(y2-y1, 2));
-       return dist;
-   }
 }
