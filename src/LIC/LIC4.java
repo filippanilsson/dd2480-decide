@@ -47,8 +47,6 @@ public class LIC4 implements LIC{
                     visitedQuad[3] = true;
                 }
             }
-            System.out.println(visitedQuad[0] + " " + visitedQuad[1] + " " + visitedQuad[2] + " " + visitedQuad[3]);
-            System.out.println(quadCount);
             if(quadCount > p.QUADS) return true;
         }
         
