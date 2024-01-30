@@ -31,9 +31,10 @@ public class LIC1 implements LIC {
             double dist2 = dist(x2, y2, x3, y3);
             double dist3 = dist(x1, y1, x3, y3);
 
-            if (dist1 > p.RADIUS1*2 || dist2 > p.RADIUS1 *2 || dist3 > p.RADIUS1*2) {
-                return true;
-            }
+            double minEnclosingRadius;
+            if (isTriangleObtuse(dist1, dist2, dist3)) minEnclosingRadius = Math.max(dist1,Math.max(dist2,dist3))/2;
+            else minEnclosingRadius = (dist1*dist2*dist3)/Math.sqrt((dist1+dist2+dist3)*(dist1+dist2-dist3)*(dist1-dist2+dist3)*(-dist1+dist2+dist3));
+            if (minEnclosingRadius > p.RADIUS1) return true;
         }
        return false;
    }
@@ -42,5 +43,16 @@ public class LIC1 implements LIC {
        double dist = Math.sqrt(Math.pow(x2-x1,2)+ Math.pow(y2-y1, 2));
        return dist;
    }
+
+   /**
+     * Checks if a triangle is obtuse
+     * @param a side length 1 of the triangle
+     * @param b side length 2 of the triangle
+     * @param c side length 3 of the triangle
+     * @return a boolean indicating whether side lengths a,b,c form an obtuse triangle
+     */
+    private boolean isTriangleObtuse(double a, double b, double c) {
+        return (2*Math.pow(Math.max(a,Math.max(b,c)), 2) > Math.pow(a,2)+Math.pow(b,2)+Math.pow(c,2));
+    }
 }
 
