@@ -27,11 +27,11 @@ public class LIC9 implements LIC {
         //Bounder
         if(NUMPOINTS < 5)
             return false;
-        if(p.C_PTS < 1 || p.D_PTS < 1)
-            return false;
-        if(p.C_PTS + p.D_PTS > NUMPOINTS - 3)
-            return false;
-        
+
+        assert(p.C_PTS >= 1 && p.D_PTS >= 1);
+        assert(p.C_PTS + p.D_PTS <= NUMPOINTS - 3);
+        assert(p.EPSILON >= 0 && p.EPSILON < Math.PI); 
+
         for(int i = 0; i < NUMPOINTS - p.C_PTS - p.D_PTS - 2; ++i) {
             double x1 = POINTSX[i];
             double y1 = POINTSY[i];
@@ -42,11 +42,10 @@ public class LIC9 implements LIC {
 
             // Check if the angle is defined
             if (!arePointsCoincident(x1, y1, x2, y2) && !arePointsCoincident(x2, y2, x3, y3)) {
-                double angle = angle(x1, y1, x2, y2, x3, y3);
+                double angle = angle(x2, y2, x1, y1, x3, y3);
     
                 double epsilon1 = Math.PI - p.EPSILON;
-                double epsilon2 = Math.PI + p.EPSILON;
-    
+                double epsilon2 = Math.PI + p.EPSILON;    
                 // Check if the second point of the set of three points is always the vertex of the angle.
                 if (angle < epsilon1 || angle > epsilon2) {
                     return true;
@@ -72,7 +71,6 @@ public class LIC9 implements LIC {
         double dist23 = dist(x2, y2, x3, y3);
 
         double cosAngle = (Math.pow(dist12, 2) + Math.pow(dist13, 2) - Math.pow(dist23, 2)) / (2 * dist12 * dist13);
-
         // Make sure the value is within the valid range for acos
         cosAngle = Math.max(-1, Math.min(1, cosAngle));
 
