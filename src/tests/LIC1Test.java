@@ -12,17 +12,6 @@ public class LIC1Test {
      */
 
     @Test
-    public void assertThatLIC1ReturnsFalseWithInvalidCriteria() {
-        Parameters p = new Parameters();
-        p.RADIUS1 = 3.0;
-        int NUMPOINTS = 3;
-        double[] POINTSX = {1.0, 2.0, 3.0};
-        double[] POINTSY = {1.0, 2.0, 3.0};
-    
-        assertFalse((new LIC1()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-    }
-
-    @Test
     public void assertThatTooSmallRadiusThrowsException() {
         Parameters p = new Parameters();
         p.RADIUS1 = -0.1;
@@ -30,7 +19,34 @@ public class LIC1Test {
         double[] POINTSX = {1.0, 2.0, 3.0};
         double[] POINTSY = {1.0, 2.0, 3.0};
         
-        assertThrows(AssertionError.class, () -> {(new LIC0()).evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+        assertThrows(AssertionError.class, () -> {(new LIC1()).evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+    }
+
+    /*
+     * ------ FAILING TESTS ------
+     * Tests that the function evaluates to false when supposed to
+     */
+
+    @Test
+    public void assertThatLIC1ReturnsFalseWithInvalidCriteria() {
+        Parameters p = new Parameters();
+        p.RADIUS1 = 3.0;
+        int NUMPOINTS = 3;
+        double[] POINTSX = {1.0, 2.0, 3.0};
+        double[] POINTSY = {1.0, 2.0, 3.0};
+     
+        assertFalse((new LIC1()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
+    }
+
+    @Test
+    public void assertThatLIC1ReturnsFalseForSmallObtuseTriangle(){
+        Parameters p = new Parameters();
+        p.RADIUS1 = 1.0;
+        int NUMPOINTS = 3;
+        double[] POINTSX = {-1.0, 0.0, 1.0};
+        double[] POINTSY = {0.0, 0.5, 0.0};
+
+        assertFalse((new LIC1()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
     }
 
     /*
@@ -46,6 +62,17 @@ public class LIC1Test {
         double[] POINTSX = {1.0, 2.0, 3.0};
         double[] POINTSY = {1.0, 2.0, 3.0};
   
+        assertTrue((new LIC1()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
+    }
+
+    @Test
+    public void assertThatLIC1ReturnsTrueForLargeAcuteTriangle(){
+        Parameters p = new Parameters();
+        p.RADIUS1 = 1.0;
+        int NUMPOINTS = 3;
+        double[] POINTSX = {-1.0, 0.0, 1.0};
+        double[] POINTSY = {0.0, 1.5, 0.0};
+
         assertTrue((new LIC1()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
     }
 }
