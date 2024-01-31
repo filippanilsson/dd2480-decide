@@ -22,9 +22,9 @@ public class LIC12 implements LIC {
             return false;
         }
 
-        if (!(0 <= p.LENGTH2)) {
-            return false;
-        }
+        assert(0 <= p.LENGTH1);
+        assert(0 <= p.LENGTH2);
+        assert(1 <= p.K_PTS && p.K_PTS <= NUMPOINTS-2);
 
         boolean existsDistGreaterThanLength1 = false;
         boolean existsDistLessThanLength2 = false;
