@@ -13,7 +13,7 @@ public class PUM {
      * @param CMV the conditions met matrix
      * @return A 15x15 boolean matrix representing the PUM
      */
-    public boolean [][] calculatePUM(String [][] LCM, boolean [] CMV){
+    public static boolean [][] calculatePUM(String [][] LCM, boolean [] CMV){
         assert(CMV.length == 15);
         assert(LCM.length == 15);
         boolean [][] PUM = new boolean[15][15];

@@ -23,7 +23,7 @@ public class PUMTest {
         }
         LCM[5][5] = "LOL";
         
-        assertThrows(IllegalArgumentException.class, () -> {new PUM().calculatePUM(LCM, CMV);});
+        assertThrows(IllegalArgumentException.class, () -> {PUM.calculatePUM(LCM, CMV);});
     } 
 
     @Test
@@ -37,7 +37,7 @@ public class PUMTest {
             }
         }
         
-        assertThrows(AssertionError.class, () -> {new PUM().calculatePUM(LCM, CMV);});
+        assertThrows(AssertionError.class, () -> {PUM.calculatePUM(LCM, CMV);});
     }
 
     @Test
@@ -51,7 +51,7 @@ public class PUMTest {
             }
         }
         
-        assertThrows(AssertionError.class, () -> {new PUM().calculatePUM(LCM, CMV);});
+        assertThrows(AssertionError.class, () -> {PUM.calculatePUM(LCM, CMV);});
     }
 
      /*
@@ -71,11 +71,11 @@ public class PUMTest {
                 LCM[i][j] = "ORR";
             }
         }
-        boolean[][] PUM = new PUM().calculatePUM(LCM,CMV);
+        boolean[][] pum = PUM.calculatePUM(LCM,CMV);
 
-        for (int i = 0; i < PUM.length; i++) {
-            for (int j = 0; j < PUM.length; j++){
-                assertFalse(PUM[i][j]);
+        for (int i = 0; i < pum.length; i++) {
+            for (int j = 0; j < pum.length; j++){
+                assertFalse(pum[i][j]);
             }
         }
     }   
@@ -86,7 +86,7 @@ public class PUMTest {
      */
     
     @Test
-    public void assertThatAllTrueCMVAnddLCMReturnsAllTruePUM() {
+    public void assertThatAllTrueCMVAnddLCMReturnsAllTruepum() {
 
         boolean[] CMV = new boolean[15];
         Arrays.fill(CMV, Boolean.TRUE);
@@ -97,17 +97,17 @@ public class PUMTest {
                 LCM[i][j] = "ANDD";
             }
         }
-        boolean[][] PUM = new PUM().calculatePUM(LCM,CMV);
+        boolean[][] pum = PUM.calculatePUM(LCM,CMV);
 
-        for (int i = 0; i < PUM.length; i++) {
-            for (int j = 0; j < PUM.length; j++){
-                assertTrue(PUM[i][j]);
+        for (int i = 0; i < pum.length; i++) {
+            for (int j = 0; j < pum.length; j++){
+                assertTrue(pum[i][j]);
             }
         }
     }
 
     @Test
-    public void assertThatAllTrueCMVNOTUSEDLCMReturnsAllTruePUM() {
+    public void assertThatAllTrueCMVNOTUSEDLCMReturnsAllTruepum() {
 
         boolean[] CMV = new boolean[15];
         Arrays.fill(CMV, Boolean.TRUE);
@@ -118,11 +118,11 @@ public class PUMTest {
                 LCM[i][j] = "NOTUSED";
             }
         }
-        boolean[][] PUM = new PUM().calculatePUM(LCM,CMV);
+        boolean[][] pum = PUM.calculatePUM(LCM,CMV);
 
-        for (int i = 0; i < PUM.length; i++) {
-            for (int j = 0; j < PUM.length; j++){
-                assertTrue(PUM[i][j]);
+        for (int i = 0; i < pum.length; i++) {
+            for (int j = 0; j < pum.length; j++){
+                assertTrue(pum[i][j]);
             }
         }
     }
