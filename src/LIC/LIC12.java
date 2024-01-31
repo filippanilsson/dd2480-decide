@@ -18,11 +18,12 @@ public class LIC12 implements LIC {
      * @return a boolean stating whether the 12:th LIC is satisfied
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
-        if (NUMPOINTS < 3) {
-            return false;
-        }
+        
+        assert(0 <= p.LENGTH1);
+        assert(0 <= p.LENGTH2);
+        assert(1 <= p.K_PTS && p.K_PTS <= NUMPOINTS-2);
 
-        if (!(0 <= p.LENGTH2)) {
+        if (NUMPOINTS < 3) {
             return false;
         }
 
