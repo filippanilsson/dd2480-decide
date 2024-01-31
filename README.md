@@ -33,6 +33,30 @@ DECIDE serves as a comprehensive tool for assessing Launch Interceptor Condition
 
 This project is designed with modularity and maintainability in mind, allowing users to understand, test, and extend the functionality efficiently.
 
+## Specifications
+
+The application relies on a set of parameters that are managed in the `parameters` folder. These parameters include:
+
+- LENGTH1: Length in LICs 0, 7 ,12
+- RADIUS1: Radius in LICs 1, 8 ,13
+- EPSILON: Deviation from PI in LICs 2, 9
+- AREA1: Area in LICs 3, 10, 14
+- Q_PTS: No. of consecutive points in LIC 4
+- QUADS: No. of quadrants points in LIC 4
+- DIST: Distance in LIC 6
+- N_PTS: No. of consecutive points in LIC 6
+- K_PTS: No. of consecutive points in LICs 7, 12
+- A_PTS: No. of consecutive points in LICs 8, 13
+- B_PTS: No. of consecutive points in LICs 8, 13
+- C_PTS: No. of consecutive points in LIC 9
+- D_PTS: No. of consecutive points in LIC 9
+- E_PTS: No. of consecutive points in LICs 10, 14
+- F_PTS: No. of consecutive points in LICs 10, 14
+- G_PTS: No. of consecutive points in LIC 11
+- LENGTH2: Maximum length in LIC 12
+- RADIUS2: Maximum radius in LIC 13
+- AREA2: Maximum area in LIC 14
+
 ## Requirements
 
 + JDK: 21
@@ -42,13 +66,13 @@ This project is designed with modularity and maintainability in mind, allowing u
 ### Anna Martensson
 1.
 
+### Charlotta Johnsson
+1.
+
 ### Emil Hultcrantz
 1.
 
 ### Filippa Nilsson
-1.
-
-### Lotta Johnsson
 1.
 
 ### Tianning Liang
