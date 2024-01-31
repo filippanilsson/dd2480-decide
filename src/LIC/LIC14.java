@@ -35,7 +35,7 @@ public class LIC14 implements LIC {
             double x3 = POINTSX[i + p.E_PTS + p.F_PTS + 2];
             double y3 = POINTSY[i + p.E_PTS + p.F_PTS + 2];
 
-            double curr_area = area(x1, y1, x2, y2, x3, y3);
+            double curr_area = Utils.area(x1, y1, x2, y2, x3, y3);
             if(curr_area > p.AREA1) {
                 existsAreaGreaterThanArea1 = true;
             }
@@ -44,10 +44,5 @@ public class LIC14 implements LIC {
             }
         }
         return existsAreaGreaterThanArea1 && existsAreaLessThanArea2;
-    }
-
-    private double area(double x1, double y1, double x2, double y2, double x3, double y3) {
-        double a = Math.abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))/2;
-        return a;
     }
 }

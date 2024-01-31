@@ -35,47 +35,19 @@ public class LIC9 implements LIC {
         for(int i = 0; i < NUMPOINTS - p.C_PTS - p.D_PTS - 2; ++i) {
             double x1 = POINTSX[i];
             double y1 = POINTSY[i];
-            double x2 = POINTSX[i + p.C_PTS + 1];
-            double y2 = POINTSY[i + p.C_PTS + 1];
-            double x3 = POINTSX[i + p.C_PTS + p.D_PTS + 2];
-            double y3 = POINTSY[i + p.C_PTS + p.D_PTS + 2];
+            double vx = POINTSX[i + p.C_PTS + 1];
+            double vy = POINTSY[i + p.C_PTS + 1];
+            double x2 = POINTSX[i + p.C_PTS + p.D_PTS + 2];
+            double y2 = POINTSY[i + p.C_PTS + p.D_PTS + 2];
 
-            // Check if the angle is defined
-            if (!arePointsCoincident(x1, y1, x2, y2) && !arePointsCoincident(x2, y2, x3, y3)) {
-                double angle = angle(x2, y2, x1, y1, x3, y3);
-    
-                double epsilon1 = Math.PI - p.EPSILON;
-                double epsilon2 = Math.PI + p.EPSILON;    
-                // Check if the second point of the set of three points is always the vertex of the angle.
-                if (angle < epsilon1 || angle > epsilon2) {
-                    return true;
-                }
+            if (Utils.isAngleOutsideInterval(vx, vy, x1, y1, x2, y2, p.EPSILON)) {
+                return true;
             }
+
         }
-        
+
         return false;
     }
 
-    private boolean arePointsCoincident(double x1, double y1, double x2, double y2) {
-        return x1 == x2 && y1 == y2;
-    }
-
-    private double dist(double x1, double y1, double x2, double y2) {
-        double dist = Math.sqrt(Math.pow(x2-x1,2)+ Math.pow(y2-y1, 2));
-        return dist;
-    }
-
-    private double angle(double x1, double y1, double x2, double y2, double x3, double y3) {
-        double dist12 = dist(x1, y1, x2, y2);
-        double dist13 = dist(x1, y1, x3, y3);
-        double dist23 = dist(x2, y2, x3, y3);
-
-        double cosAngle = (Math.pow(dist12, 2) + Math.pow(dist13, 2) - Math.pow(dist23, 2)) / (2 * dist12 * dist13);
-        // Make sure the value is within the valid range for acos
-        cosAngle = Math.max(-1, Math.min(1, cosAngle));
-
-        double angle = Math.acos(cosAngle);
-        return angle;
-    }
 }
 

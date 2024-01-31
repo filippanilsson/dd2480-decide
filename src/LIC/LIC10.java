@@ -35,16 +35,10 @@ public class LIC10 implements LIC{
             double y3 = POINTSY[i + p.E_PTS + p.F_PTS + 2];
 
             //Check if the area satisfy the condition
-            if(area(x1, y1, x2, y2, x3, y3) > p.AREA1) {
+            if(Utils.area(x1, y1, x2, y2, x3, y3) > p.AREA1) {
                 return true;
             }
         }
         return false;
     }
-
-    private double area(double x1, double y1, double x2, double y2, double x3, double y3) {
-        double a = Math.abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))/2;
-        return a;
-    }
-    
 }

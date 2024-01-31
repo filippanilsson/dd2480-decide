@@ -23,7 +23,7 @@ public class LIC7 implements LIC {
         assert(0 <= p.LENGTH1);
         assert(1 <= p.K_PTS && p.K_PTS <= NUMPOINTS-2);
         for (int i = 0; i < NUMPOINTS-p.K_PTS-1; i++) {       
-            double dist = Math.sqrt(Math.pow(POINTSX[i+p.K_PTS+1]-POINTSX[i],2)+Math.pow(POINTSY[i+p.K_PTS+1]-POINTSY[i],2));
+            double dist = Utils.dist(POINTSX[i], POINTSY[i], POINTSX[i+p.K_PTS+1], POINTSY[i+p.K_PTS+1]);
             if (dist > p.LENGTH1) return true;
         }
         return false;

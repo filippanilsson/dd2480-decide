@@ -34,8 +34,8 @@ public class LIC6 implements LIC {
                 double x2 = POINTSX[i+p.N_PTS-1];
                 double y2 = POINTSY[i+p.N_PTS-1];
                 double dist;
-                if ((x1 == x2) && (y1 == y2)) dist = Math.sqrt(Math.pow(x-x1,2)+Math.pow(y-y1,2));
-                else dist = Math.abs(((y2-y1)*x-(x2-x1)*y+x2*y1-y2*x1)/Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2)));
+                if (Utils.arePointsCoincident(x1, y1, x2, y2)) dist = Utils.dist(x1, y1, x, y);
+                else dist = Math.abs(((y2-y1)*x-(x2-x1)*y+x2*y1-y2*x1)/Utils.dist(x1, y1, x2, y2));
                 if (dist > p.DIST) return true;
             }
         }

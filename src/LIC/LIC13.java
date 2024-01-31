@@ -36,13 +36,7 @@ public class LIC13 implements LIC {
             double x3 = POINTSX[i + p.A_PTS + p.B_PTS + 2];
             double y3 = POINTSY[i + p.A_PTS + p.B_PTS + 2];
 
-            double a = dist(x1, y1, x2, y2);
-            double b = dist(x2, y2, x3, y3);
-            double c = dist(x1, y1, x3, y3);
-
-            double minEnclosingRadius;
-            if (isTriangleObtuse(a, b, c)) minEnclosingRadius = Math.max(a,Math.max(b,c))/2;
-            else minEnclosingRadius = (a*b*c)/Math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(-a+b+c));
+            double minEnclosingRadius = Utils.minEnclosingRadius(x1, y1, x2, y2, x3, y3);
 
             if (minEnclosingRadius > p.RADIUS1) {
                 existsPointsNotContainedInRadius1 = true;
@@ -52,21 +46,5 @@ public class LIC13 implements LIC {
             }
         }
         return existsPointsNotContainedInRadius1 && existsPointsContainedInRadius2;
-    }
-
-    private double dist(double x1, double y1, double x2, double y2) {
-        double dist = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        return dist;
-    }
-
-    /**
-     * Checks if a triangle is obtuse
-     * @param a side length 1 of the triangle
-     * @param b side length 2 of the triangle
-     * @param c side length 3 of the triangle
-     * @return a boolean indicating whether side lengths a,b,c form an obtuse triangle
-     */
-    private boolean isTriangleObtuse(double a, double b, double c) {
-        return (2*Math.pow(Math.max(a,Math.max(b,c)), 2) > Math.pow(a,2)+Math.pow(b,2)+Math.pow(c,2));
     }
 }
