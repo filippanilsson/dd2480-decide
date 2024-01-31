@@ -18,12 +18,13 @@ public class LIC10 implements LIC{
     */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
         //Bounder
-        if(NUMPOINTS < 5)
-            return false;
-
+    
         assert(p.E_PTS >= 1 && p.F_PTS >= 1);
         assert(p.E_PTS + p.F_PTS <= NUMPOINTS-3);
         assert(p.AREA1 >= 0);
+
+        if(NUMPOINTS < 5)
+            return false;
         
         for(int i = 0; i < NUMPOINTS - p.E_PTS - p.F_PTS - 2; ++i) {
             double x1 = POINTSX[i];

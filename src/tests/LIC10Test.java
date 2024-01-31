@@ -70,19 +70,6 @@ public class LIC10Test {
      */
 
     @Test
-    public void assertThatTooFewPointsReturnFalse() {
-        p.E_PTS = 1;
-        p.F_PTS = 1;
-        p.AREA1 = 3;
-        int NUMPOINTS = 4;
-
-        double[] POINTSX = {0, 1, 2, 3, 4, 5, 6, 7};
-        double[] POINTSY = {0, 1, 1.5, 2, 2.5, 1.5, 0, 1};
-        LIC10 lic10 = new LIC10();
-        assertFalse(lic10.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-    }
-
-    @Test
     public void assertThatInvalidCriteriaReturnFalse() {
         p.E_PTS = 1;
         p.F_PTS = 1;
