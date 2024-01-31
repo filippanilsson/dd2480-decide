@@ -86,7 +86,7 @@ public class PUMTest {
      */
     
     @Test
-    public void assertThatAllTrueCMVAnddLCMReturnsAllTruepum() {
+    public void assertThatAllTrueCMVAnddLCMReturnsAllTruePUM() {
 
         boolean[] CMV = new boolean[15];
         Arrays.fill(CMV, Boolean.TRUE);
@@ -107,7 +107,7 @@ public class PUMTest {
     }
 
     @Test
-    public void assertThatAllTrueCMVNOTUSEDLCMReturnsAllTruepum() {
+    public void assertThatAllTrueCMVNOTUSEDLCMReturnsAllTruePUM() {
 
         boolean[] CMV = new boolean[15];
         Arrays.fill(CMV, Boolean.TRUE);
