@@ -14,15 +14,16 @@ public class LIC10 implements LIC{
     * @param NUMPOINTS the amount of points
     * @param POINTSX an array of the x-coordinates of all points
     * @param POINTSY an array of the y-coordinates of all points
-    * @return a boolean stating whether the 9:st LIC is satisfied
+    * @return a boolean stating whether LIC #10 is satisfied
     */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
         //Bounder
+    
+        assert(p.E_PTS >= 1 && p.F_PTS >= 1);
+        assert(p.E_PTS + p.F_PTS <= NUMPOINTS-3);
+        assert(p.AREA1 >= 0);
+
         if(NUMPOINTS < 5)
-            return false;
-        if(p.E_PTS < 1 || p.F_PTS < 1)
-            return false;
-        if(p.E_PTS + p.F_PTS > NUMPOINTS - 3)
             return false;
         
         for(int i = 0; i < NUMPOINTS - p.E_PTS - p.F_PTS - 2; ++i) {
