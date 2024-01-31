@@ -11,7 +11,7 @@ import parameters.Parameters;
  *   is not satisfied by those three points.
  *   (0 ≤ EPSILON < PI)
 */
-public class LIC2 {
+public class LIC2 implements LIC {
     
     /**
      * Evaluates LIC #2
