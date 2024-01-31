@@ -61,12 +61,8 @@ public class LIC13Test {
     }
 
 
-    /**
-     * FAILING TESTS
-     * Tests that evaluate function returns false when input does not satisfy LIC #13.
-     */
     @Test
-    public void assertThatTooFewPointsReturnFalse() {
+    public void assertThatTooFewPointsThrowsException() {
         Parameters p = new Parameters();
         p.A_PTS = 1;
         p.B_PTS = 1;
@@ -77,9 +73,13 @@ public class LIC13Test {
         double[] POINTSY = {0.0,1.0};
 
         LIC13 lic13 = new LIC13();
-        assertFalse(lic13.evaluate(p,NUMPOINTS,POINTSX,POINTSY));
+        assertThrows(AssertionError.class, () -> {lic13.evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
     }
 
+    /**
+     * FAILING TESTS
+     * Tests that evaluate function returns false when input does not satisfy LIC #13.
+     */
     @Test
     public void assertThatContainedInRadius1ReturnsFalse() {
         Parameters p = new Parameters();

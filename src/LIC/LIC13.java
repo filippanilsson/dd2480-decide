@@ -23,11 +23,8 @@ public class LIC13 implements LIC {
         assert(0 <= p.RADIUS2);
         assert(1 <= p.A_PTS);
         assert(1 <= p.B_PTS);
+        assert(p.A_PTS+p.B_PTS <= NUMPOINTS-3);
         
-        if (NUMPOINTS < 5) {
-            return false;
-        }
-
         boolean existsPointsNotContainedInRadius1 = false;
         boolean existsPointsContainedInRadius2 = false;
         for (int i = 0; i < NUMPOINTS - p.A_PTS - p.B_PTS - 2 &&
