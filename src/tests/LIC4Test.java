@@ -35,7 +35,7 @@ public class LIC4Test {
     }
     
     @Test
-    public void assertThatTooFewPointsReturnsFalse() {
+    public void assertThatTooFewPointsThrowsException() {
         Parameters p = new Parameters();
         int NUMPOINTS = 1;
         p.Q_PTS = 2;
@@ -45,6 +45,11 @@ public class LIC4Test {
         assertThrows(AssertionError.class, () -> {(new LIC4()).evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
     }
 
+    /**
+     * FAILING TESTS
+     * Tests that function returns false when input does not satisfy LIC#4
+     */
+
     @Test
     public void assertThatTooFewQuadsReturnsFalse() {
         Parameters p = new Parameters();
@@ -53,6 +58,17 @@ public class LIC4Test {
         p.QUADS = 3;
         double[] POINTSX = {1.0,3.0,2.0};
         double[] POINTSY = {2.0,5.0,4.0};
+        assertFalse((new LIC4()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
+    }
+
+    @Test
+    public void assertThatTooFewQuadsManyPointsReturnsFalse() {
+        Parameters p = new Parameters();
+        int NUMPOINTS = 9;
+        p.Q_PTS = 3;
+        p.QUADS = 3;
+        double[] POINTSX = {1.0,1.0,1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0};
+        double[] POINTSY = {1.0,1.0,1.0,1.0,1.0,1.0,-1.0,-1.0,-1.0};
         assertFalse((new LIC4()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
     }
 
@@ -67,10 +83,7 @@ public class LIC4Test {
         p.QUADS = 2;
         int NUMPOINTS = 3;
         double[] POINTSX = {0.0,-1.0,0.0};
-        double[] POINTSY = {1.0,0.0,-1.0};
-
-        System.err.println((new LIC4()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-        
+        double[] POINTSY = {1.0,0.0,-1.0};        
         assertTrue((new LIC4()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
     }
 
@@ -81,9 +94,7 @@ public class LIC4Test {
         p.QUADS = 2;
         int NUMPOINTS = 3;
         double[] POINTSX = {1.0,-1.0,1.0};
-        double[] POINTSY = {1.0,-1.0,-5.0};
-        System.err.println((new LIC4()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-        
+        double[] POINTSY = {1.0,-1.0,-5.0};        
         assertTrue((new LIC4()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
     }
 }
