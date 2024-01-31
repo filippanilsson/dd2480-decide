@@ -18,10 +18,7 @@ public class LIC4 implements LIC{
         for (int i = 0; i < NUMPOINTS-p.Q_PTS+1; i++) {
             int quadCount = 0;
             boolean [] visitedQuad = {false, false, false, false};
-            System.out.println("we in loop " + i);
             for(int j = i; j < i+p.Q_PTS; j++) {
-                System.out.println("double time  " + j);
-                System.err.println(POINTSX[j] + " " + POINTSY[j]);
                 if(POINTSX[j] >= 0 && POINTSY[j] >= 0) {
                    if (visitedQuad[0] == false){
                        quadCount++;
