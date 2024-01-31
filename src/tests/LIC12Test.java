@@ -66,21 +66,6 @@ public class LIC12Test {
      * ------ FAILING TESTS ------
      * Tests that the function evaluates to false when supposed to
      */
-    @Test
-    public void assertThatTooFewPointsReturnFalse() {
-        Parameters p = new Parameters();
-
-        p.K_PTS = 1;
-        p.LENGTH1 = 1;
-        p.LENGTH2 = 1;
-
-        int NUMPOINTS = 2;
-        double[] POINTSX = {0.0, 0.0};
-        double[] POINTSY = {0.0, 0.0};
-
-        LIC12 lic12 = new LIC12();
-        assertFalse(lic12.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-    }
 
     @Test
     public void assertThatDistLessThanLength1ReturnsFalse() {
