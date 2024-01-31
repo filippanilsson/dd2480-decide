@@ -20,14 +20,14 @@ public class LIC13 implements LIC {
      * @return a boolean stating whether the 1:st LIC is satisfied
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
+        assert(0 <= p.RADIUS2);
+        assert(1 <= p.A_PTS);
+        assert(1 <= p.B_PTS);
+        
         if (NUMPOINTS < 5) {
             return false;
         }
 
-        if (!(0 <= p.RADIUS2)) {
-            return false;
-        }
-        
         boolean existsPointsNotContainedInRadius1 = false;
         boolean existsPointsContainedInRadius2 = false;
         for (int i = 0; i < NUMPOINTS - p.A_PTS - p.B_PTS - 2 &&
