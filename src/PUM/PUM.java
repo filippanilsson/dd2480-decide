@@ -7,31 +7,19 @@ package PUM;
  */
 public class PUM {
 
-    private String [][] LCM;
-    private boolean [] CMV;
-
     /**
-     * Constructor for the PUM class
-     * @param LCM the Logical Connector Matrix
-     * @param CMV the Condition Met Vector
+     * Calculates the Preliminary Unlocking Matrix (PUM)
+     * @param LCM the logical connection matrix
+     * @param CMV the conditions met matrix
+     * @return A 15x15 boolean matrix representing the PUM
      */
-    public PUM(String [][] LCM, boolean [] CMV) {
-        this.LCM = LCM;
-        this.CMV = CMV;
-    }
-    
-    /**
-     * Calculates the PUM 
-     * @param
-     * @return A 15x15 boolean matrix
-     */
-    public boolean [][] calculatePUM(){
+    public boolean [][] calculatePUM(String [][] LCM, boolean [] CMV){
         assert(CMV.length == 15);
         assert(LCM.length == 15);
         boolean [][] PUM = new boolean[15][15];
 
         for (int i = 0; i < LCM.length; i++){
-            for (int j = 0; j < LCM.length; j++){
+            for (int j = 0; j < LCM[i].length; j++){
                 switch(LCM[i][j]) {
                     case "ANDD": 
                         PUM[i][j] = CMV[i] && CMV[j];
