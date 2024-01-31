@@ -22,10 +22,7 @@ public class LIC14 implements LIC {
         assert(0 <= p.AREA2);
         assert(1 <= p.E_PTS);
         assert(1 <= p.F_PTS);
-
-        if(NUMPOINTS < 5) {
-            return false;
-        }
+        assert(p.E_PTS+p.F_PTS <= NUMPOINTS-3);
 
         boolean existsAreaGreaterThanArea1 = false;
         boolean existsAreaLessThanArea2 = false;
