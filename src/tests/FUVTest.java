@@ -18,14 +18,14 @@ public class FUVTest {
     public void assertThatTooSmallPUVRaisesError() {
         boolean[] PUV = new boolean[14];
         boolean[][] PUM = new boolean[15][15];
-        assertThrows(AssertionError.class, () -> {(new FUV()).calculateFUV(PUV,PUM);});
+        assertThrows(AssertionError.class, () -> {FUV.calculateFUV(PUV,PUM);});
     }
 
     @Test
     public void assertThatTooSmallPUMRaisesError() {
         boolean[] PUV = new boolean[15];
         boolean[][] PUM = new boolean[14][15];
-        assertThrows(AssertionError.class, () -> {(new FUV()).calculateFUV(PUV,PUM);});
+        assertThrows(AssertionError.class, () -> {FUV.calculateFUV(PUV,PUM);});
     }
 
     /*
@@ -42,9 +42,9 @@ public class FUVTest {
                 PUM[i][j] = false;
             }
         }
-        boolean[] FUV = (new FUV()).calculateFUV(PUV,PUM);
+        boolean[] fuv = FUV.calculateFUV(PUV,PUM);
         for (int i = 0; i < 15; i++) {
-            assertFalse(FUV[i]);
+            assertFalse(fuv[i]);
         }
     }
     
@@ -64,9 +64,9 @@ public class FUVTest {
                 PUM[i][j] = false;
             }
         }
-        boolean[] FUV = (new FUV()).calculateFUV(PUV,PUM);
+        boolean[] fuv = FUV.calculateFUV(PUV,PUM);
         for (int i = 0; i < 15; i++) {
-            assertTrue(FUV[i]);
+            assertTrue(fuv[i]);
         }
     }
     
@@ -81,11 +81,9 @@ public class FUVTest {
                 PUM[i][j] = true;
             }
         }
-        boolean[] FUV = (new FUV()).calculateFUV(PUV,PUM);
+        boolean[] fuv = FUV.calculateFUV(PUV,PUM);
         for (int i = 0; i < 15; i++) {
-            assertTrue(FUV[i]);
+            assertTrue(fuv[i]);
         }
     }
-    
-    
 }

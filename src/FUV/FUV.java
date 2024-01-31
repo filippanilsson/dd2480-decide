@@ -13,7 +13,7 @@ public class FUV {
      * @param PUM Preliminary Unlocking Matrix, a boolean 15x15 symmetric 2D-array
      * @return a boolean array representing the Final Unlocking Vector with 15 elements
     */
-    public boolean[] calculateFUV(boolean[] PUV, boolean[][] PUM) {
+    public static boolean[] calculateFUV(boolean[] PUV, boolean[][] PUM) {
         assert(PUV.length == 15);
         assert(PUM.length == 15);
         for (int i = 0; i < 15; i++) {
