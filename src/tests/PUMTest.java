@@ -23,7 +23,7 @@ public class PUMTest {
         }
         LCM[5][5] = "LOL";
         
-        assertThrows(IllegalArgumentException.class, () -> {new PUM(LCM, CMV).calculatePUM();});
+        assertThrows(IllegalArgumentException.class, () -> {new PUM().calculatePUM(LCM, CMV);});
     } 
 
     @Test
@@ -37,7 +37,7 @@ public class PUMTest {
             }
         }
         
-        assertThrows(AssertionError.class, () -> {new PUM(LCM, CMV).calculatePUM();});
+        assertThrows(AssertionError.class, () -> {new PUM().calculatePUM(LCM, CMV);});
     }
 
     @Test
@@ -51,7 +51,7 @@ public class PUMTest {
             }
         }
         
-        assertThrows(AssertionError.class, () -> {new PUM(LCM, CMV).calculatePUM();});
+        assertThrows(AssertionError.class, () -> {new PUM().calculatePUM(LCM, CMV);});
     }
 
      /*
@@ -71,7 +71,7 @@ public class PUMTest {
                 LCM[i][j] = "ORR";
             }
         }
-        boolean[][] PUM = new PUM(LCM,CMV).calculatePUM();
+        boolean[][] PUM = new PUM().calculatePUM(LCM,CMV);
 
         for (int i = 0; i < PUM.length; i++) {
             for (int j = 0; j < PUM.length; j++){
@@ -97,7 +97,7 @@ public class PUMTest {
                 LCM[i][j] = "ANDD";
             }
         }
-        boolean[][] PUM = new PUM(LCM,CMV).calculatePUM();
+        boolean[][] PUM = new PUM().calculatePUM(LCM,CMV);
 
         for (int i = 0; i < PUM.length; i++) {
             for (int j = 0; j < PUM.length; j++){
@@ -118,7 +118,7 @@ public class PUMTest {
                 LCM[i][j] = "NOTUSED";
             }
         }
-        boolean[][] PUM = new PUM(LCM,CMV).calculatePUM();
+        boolean[][] PUM = new PUM().calculatePUM(LCM,CMV);
 
         for (int i = 0; i < PUM.length; i++) {
             for (int j = 0; j < PUM.length; j++){
