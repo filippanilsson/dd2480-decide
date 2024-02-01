@@ -23,12 +23,10 @@ public class LIC2 implements LIC {
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
 
+        assert(NUMPOINTS >= 3);
         assert(0 <= p.EPSILON && p.EPSILON < Math.PI);
-
-        if (NUMPOINTS < 3) {
-            return false;
-        }
         
+
         for (int i = 0; i < NUMPOINTS-2; i++){
             // Point A
             double x1 = POINTSX[i];

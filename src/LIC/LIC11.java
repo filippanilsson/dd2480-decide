@@ -20,9 +20,7 @@ public class LIC11 implements LIC {
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
         //Bounder
-        if (NUMPOINTS < 3) {
-            return false;
-        }
+        assert(NUMPOINTS >= 3);
         assert(1 <= p.G_PTS);
         assert(p.G_PTS <= NUMPOINTS - 2);
 

@@ -12,6 +12,17 @@ public class LIC1Test {
      */
 
     @Test
+    public void assertThatTooFewPointsThrowsException() {
+        Parameters p = new Parameters();
+        p.RADIUS1 = 1.0;
+        int NUMPOINTS = 2;
+        double[] POINTSX = {1.0, 2.0};
+        double[] POINTSY = {1.0, 2.0};
+        
+        assertThrows(AssertionError.class, () -> {(new LIC1()).evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+    }
+
+    @Test
     public void assertThatTooSmallRadiusThrowsException() {
         Parameters p = new Parameters();
         p.RADIUS1 = -0.1;

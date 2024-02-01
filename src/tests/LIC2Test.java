@@ -11,6 +11,18 @@ public class LIC2Test {
      * INVALID INPUT TESTS
      * Tests that evaluate function raises assertion error when given invalid parameter input.
      */
+
+    @Test
+    public void assertThatTooFewPointsThrowsException() {
+        Parameters p = new Parameters();
+
+        p.EPSILON = Math.PI/2;
+        int NUMPOINTS = 2;
+        double[] POINTSX = {1.0, 1.0};
+        double[] POINTSY = {1.0, 1.0};
+
+        assertThrows(AssertionError.class, () -> {(new LIC2()).evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+    }
    
     @Test
     public void assertThatTooSmallEpsilonThrowsException() {
@@ -32,18 +44,6 @@ public class LIC2Test {
      * Tests that the function evaluates to false when supposed to
      */
     
-    @Test
-    public void assertThatLIC2ReturnsFalseWithTooFewPoints() {
-        Parameters p = new Parameters();
-
-        p.EPSILON = Math.PI/2;
-        int NUMPOINTS = 2;
-        double[] POINTSX = {1.0, 1.0};
-        double[] POINTSY = {1.0, 1.0};
-        LIC2 lic2 = new LIC2();
-        assertFalse(lic2.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-    }
-
     @Test
     public void assertThatLIC2ReturnsFalseWithCoincidingPoints(){
         Parameters p = new Parameters();
