@@ -113,7 +113,11 @@ The initial three points were accomplished in collaboration with Filippa using L
 4. Code reviewing and refactoring.
 
 ### Emil Hultcrantz
-1.
+1. Implemented LIC 12, 13, 14
+2. Implemented DECIDE
+3. Refactored common LIC functionality into Utils class
+4. Developed corresponding tests for LIC 12, 13, 14, DECIDE, and the Utils class
+5. Reviewed pull requests
 
 ### Filippa Nilsson
 The initial three points were accomplished in collaboration with Charlotta (pair programming)
