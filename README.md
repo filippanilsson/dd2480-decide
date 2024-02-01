@@ -61,6 +61,41 @@ The application relies on a set of parameters that are managed in the `parameter
 
 + JDK: 21
 
+## Way of Working
+By evaluating the [checklist](https://www.omg.org/spec/Essence/1.2/PDF) (available on p.60), we can come to the conclusion that our team is in stage 2, **In Use**. A more detailed assessment of each point of the checklist for the aforementioned stage can be found below.
+
+1. **The practices and tools are being used to do real work.**
+
+We have decided to utilize GitHub for version control, something that we were all familiar with prior to this course.
+
+We used JUnit 5 to create unit tests for all our Java classes.
+
+Discord has been used as our main communication tool, for both messages and calls.
+
+As for the practices of our work, we have delegated the tasks of the project equally. When new issues were created, we ensured that everyone had a chance to claim them in order to keep the workload even for the whole group.
+
+2. **The use of the practices and tools selected are regularly inspected.**
+
+We continuously inspected each others' work by ensuring that every pull request was reviewed by at least one other person before merging the branch.
+
+3. **The practices and tools are being adapted to the team’s context.**
+
+Around halfway through the development process, we decided to change our merging process by utilizing `merge and squash` instead of regular merging, in order to achieve a clean commit history and the P+ requirement.
+
+4. **The use of the practices and tools is supported by the team.**
+
+All practices and tools have been agreed upon by the entire team before being introduced to the workflow.
+
+5. **Procedures are in place to handle feedback on the team’s way of working.**
+
+We hold regular meetings to discuss our project and any feedback we want to bring forth. 
+
+6. **The practices and tools support team communication and collaboration**
+
+As mentioned above, Discord has been our main form of communication. We have created two separate channels, one for general communication and one for asking for help. 
+
+Furthermore, we have used pair programming as a collaboration method while implementing our code, which has increased the efficiency of the workflow.
+
 ## List of Contributors
 
 ### Anna Martensson

@@ -12,6 +12,19 @@ public class LIC11Test {
      * INVALID INPUT TESTS
      * Tests that evaluate function raises assertion error when given invalid parameter input.
      */
+
+     @Test
+    public void assertThatTooFewPointsThrowsException() {
+        p.G_PTS = 1;
+        int NUMPOINTS = 2;
+
+        double[] POINTSX = {3, 2};
+        double[] POINTSY = {0, 1};
+        LIC11 lic11 = new LIC11();
+        assertThrows(AssertionError.class, () -> {lic11.evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+    }
+
+
      @Test
     public void assertThatGPTSLessThan1ReturnFasle() {
         p.G_PTS = 0;
@@ -50,16 +63,6 @@ public class LIC11Test {
         assertFalse(lic11.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
     }
 
-    @Test
-    public void assertThatTooFewPointsReturnFalse() {
-        p.G_PTS = 1;
-        int NUMPOINTS = 2;
-
-        double[] POINTSX = {3, 2};
-        double[] POINTSY = {0, 1};
-        LIC11 lic11 = new LIC11();
-        assertFalse(lic11.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-    }
 
     /*
      * ------ PASSING TESTS ------

@@ -19,9 +19,9 @@ public class LIC7 implements LIC {
      * @return a boolean indicating whether LIC 7 is satisfied
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
-        if (NUMPOINTS < 3) return false;
         assert(0 <= p.LENGTH1);
         assert(1 <= p.K_PTS && p.K_PTS <= NUMPOINTS-2);
+
         for (int i = 0; i < NUMPOINTS-p.K_PTS-1; i++) {       
             double dist = Utils.dist(POINTSX[i], POINTSY[i], POINTSX[i+p.K_PTS+1], POINTSY[i+p.K_PTS+1]);
             if (dist > p.LENGTH1) return true;

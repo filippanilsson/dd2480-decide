@@ -22,9 +22,9 @@ public class LIC6 implements LIC {
      * @return a boolean indicating whether LIC 6 is satisfied
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
-        if (NUMPOINTS < 3) return false;
         assert(3 <= p.N_PTS && p.N_PTS <= NUMPOINTS);
         assert(0 <= p.DIST);
+
         for (int i = 0; i < NUMPOINTS-p.N_PTS+1; i++) {            
             for (int j = i+1; j < i+p.N_PTS-1; j++) {
                 double x1 = POINTSX[i];
