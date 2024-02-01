@@ -98,8 +98,12 @@ Furthermore, we have used pair programming as a collaboration method while imple
 
 ## List of Contributors
 
-### Anna Martensson
-1.
+### Anna Mårtensson
+1. Implemented LIC 6, 7, 8.
+2. Implemented FUV in collaboration with Tianning.
+3. Developed corresponding tests for LIC 6, 7, 8, and the FUV module.
+4. Reviewed all final LIC evaluation functions to identify incorrect output behavior and implemented necessary bug fixes.
+5. Pull request code review.
 
 ### Charlotta Johnsson
 1.
