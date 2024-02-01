@@ -76,7 +76,12 @@ The application relies on a set of parameters that are managed in the `parameter
 1.
 
 ### Tianning Liang
-1. 
+1. Implementated LIC 9,10,11, 
+2. Implementated FUV (in collaboration with Anna).
+3. Developed corresponding tests for LIC 9, 10, 11, and the FUV module.
+4. Draft version of README.md
+5. Code reviewing.
+
 
 
 
