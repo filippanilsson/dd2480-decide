@@ -7,9 +7,9 @@ import LIC.LIC2;
 
 public class LIC2Test {
     
-    /*
-     * ------ FAILING TESTS ------
-     * Tests that the function evaluates to false when supposed to
+    /**
+     * INVALID INPUT TESTS
+     * Tests that evaluate function raises assertion error when given invalid parameter input.
      */
    
     @Test
@@ -27,6 +27,11 @@ public class LIC2Test {
         });
     }
 
+    /*
+     * ------ FAILING TESTS ------
+     * Tests that the function evaluates to false when supposed to
+     */
+    
     @Test
     public void assertThatLIC2ReturnsFalseWithTooFewPoints() {
         Parameters p = new Parameters();
