@@ -73,7 +73,14 @@ The application relies on a set of parameters that are managed in the `parameter
 1.
 
 ### Filippa Nilsson
-1.
+The initial three points were accomplished in collaboration with Charlotta (pair programming)
+1. Implemented LIC 0, 1, 2, 3, 4, 5 
+2. Implemented PUM 
+3. Developed corresponding tests for LIC 0, 1, 2, 3, 4, 5, and the PUM module
+4. Wrote the assessment of our Way of Working
+5. Code reviewing
+6. Bugfixing and refactoring
+
 
 ### Tianning Liang
 1. Implementated LIC 9,10,11, 
