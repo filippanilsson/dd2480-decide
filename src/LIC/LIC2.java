@@ -34,26 +34,13 @@ public class LIC2 implements LIC {
             double x1 = POINTSX[i];
             double y1 = POINTSY[i];
             // Point B
-            double x2 = POINTSX[i+1];
-            double y2 = POINTSY[i+1];
+            double vx = POINTSX[i+1];
+            double vy = POINTSY[i+1];
             // Point C
-            double x3 = POINTSX[i+2];
-            double y3 = POINTSY[i+2];
+            double x2 = POINTSX[i+2];
+            double y2 = POINTSY[i+2];
 
-            if((x1 == x2 && y1 == y2) || (x2 == x3 && y2 == y3)) {
-                return false;
-            }
-
-            double angle1 = Math.atan2(y1 - y2, x1 - x2);
-            double angle2 = Math.atan2(y3 - y2, x3 - x2);
-            double angle = angle1 - angle2;
-        
-            // Ensure the angle is between 0 and 2π
-            if (angle < 0) {
-                angle += 2 * Math.PI;
-            }
-            
-            if (angle < (Math.PI - p.EPSILON) || angle > (Math.PI + p.EPSILON)) {
+            if (Utils.isAngleOutsideInterval(vx, vy, x1, y1, x2, y2, p.EPSILON)) {
                 return true;
             }
         }

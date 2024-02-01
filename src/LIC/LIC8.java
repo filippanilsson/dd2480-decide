@@ -27,26 +27,17 @@ public class LIC8 implements LIC {
         assert(p.A_PTS+p.B_PTS <= NUMPOINTS-3);
         assert(p.RADIUS1 >= 0);
         for (int i = 0; i < NUMPOINTS-p.A_PTS-p.B_PTS-2; i++) {
-            double a = Math.sqrt(Math.pow(POINTSX[i+p.A_PTS+1]-POINTSX[i],2)+Math.pow(POINTSY[i+p.A_PTS+1]-POINTSY[i],2));
-            double b = Math.sqrt(Math.pow(POINTSX[i+p.A_PTS+p.B_PTS+2]-POINTSX[i],2)+Math.pow(POINTSY[i+p.A_PTS+p.B_PTS+2]-POINTSY[i],2));
-            double c = Math.sqrt(Math.pow(POINTSX[i+p.A_PTS+p.B_PTS+2]-POINTSX[i+p.A_PTS+1],2)+Math.pow(POINTSY[i+p.A_PTS+p.B_PTS+2]-POINTSY[i+p.A_PTS+1],2));
-            double minEnclosingRadius;
-            if (isTriangleObtuse(a, b, c)) minEnclosingRadius = Math.max(a,Math.max(b,c))/2;
-            else minEnclosingRadius = (a*b*c)/Math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(-a+b+c));
+            double x1 = POINTSX[i];
+            double y1 = POINTSY[i];
+            double x2 = POINTSX[i + p.A_PTS + 1];
+            double y2 = POINTSY[i + p.A_PTS + 1];
+            double x3 = POINTSX[i + p.A_PTS + p.B_PTS + 2];
+            double y3 = POINTSY[i + p.A_PTS + p.B_PTS + 2];
+
+            double minEnclosingRadius = Utils.minEnclosingRadius(x1, y1, x2, y2, x3, y3);
+
             if (minEnclosingRadius > p.RADIUS1) return true;
         }
         return false;
     }
-
-    /**
-     * Checks if a triangle is obtuse
-     * @param a side length 1 of the triangle
-     * @param b side length 2 of the triangle
-     * @param c side length 3 of the triangle
-     * @return a boolean indicating whether side lengths a,b,c form an obtuse triangle
-     */
-    private boolean isTriangleObtuse(double a, double b, double c) {
-        return (2*Math.pow(Math.max(a,Math.max(b,c)), 2) > Math.pow(a,2)+Math.pow(b,2)+Math.pow(c,2));
-    }
-
 }
