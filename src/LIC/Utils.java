@@ -121,9 +121,6 @@ public final class Utils {
         double a = Utils.dist(x1, y1, x2, y2);
         double b = Utils.dist(x2, y2, x3, y3);
         double c = Utils.dist(x1, y1, x3, y3);
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
 
         double minEnclosingRadius;
         if (Utils.isTriangleObtuse(a, b, c)) {
@@ -131,10 +128,8 @@ public final class Utils {
         } else { 
             double s = (a+b+c)/2;
             minEnclosingRadius = (a*b*c)/(4*Math.sqrt(s*(s-a)*(s-b)*(s-c)));
-            // minEnclosingRadius = (a*b*c)/Math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(-a+b+c));
         }
         
-        System.out.println(minEnclosingRadius);
         return minEnclosingRadius;
     }
 }
