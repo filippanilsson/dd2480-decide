@@ -11,6 +11,16 @@ public class LIC8Test {
      * INVALID INPUT TESTS
      * Tests that evaluate function raises assertion error when given invalid parameter input.
      */
+    @Test
+    public void assertThatTooFewPointsThrowsException() {
+        Parameters p = new Parameters();
+        p.K_PTS = 1;
+        p.LENGTH1 = 1;
+        int NUMPOINTS = 2;
+        double[] POINTSX = {0.0,1.0};
+        double[] POINTSY = {0.0,1.0};
+        assertThrows(AssertionError.class, () -> {(new LIC8()).evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+    }
 
     @Test
     public void assertThatTooSmallAPTSRaisesError() {
@@ -65,17 +75,7 @@ public class LIC8Test {
      * Tests that evaluate function returns false when input does not satisfy LIC #8.
      */
 
-    @Test
-    public void assertThatTooFewPointsReturnFalse() {
-        Parameters p = new Parameters();
-        p.A_PTS = 1;
-        p.B_PTS = 1;
-        p.RADIUS1 = 1;
-        int NUMPOINTS = 2;
-        double[] POINTSX = {0.0,1.0};
-        double[] POINTSY = {0.0,1.0};
-        assertFalse((new LIC8()).evaluate(p,NUMPOINTS,POINTSX,POINTSY));
-    }
+   
 
     @Test
     public void assertThatMaxCircleLessThanRADIUS1ReturnsFalse() {

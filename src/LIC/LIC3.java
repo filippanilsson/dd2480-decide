@@ -19,11 +19,9 @@ public class LIC3 implements LIC {
     */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY){
 
+        assert(NUMPOINTS >= 3);
         assert(0 <= p.AREA1);
         
-        if (NUMPOINTS < 3) {
-            return false;
-        }
 
         for(int i=0; i < NUMPOINTS-2; i++){
             double x1 = POINTSX[i];

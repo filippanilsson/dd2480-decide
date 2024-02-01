@@ -17,7 +17,8 @@ public class LIC0 implements LIC {
      * @return a boolean stating whether the 0:th LIC is satisfied
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
-
+        
+        assert(NUMPOINTS >= 2);
         assert(0 <= p.LENGTH1);
 
         for(int i = 0; i < NUMPOINTS-1 ; i++){

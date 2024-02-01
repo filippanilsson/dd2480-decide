@@ -11,6 +11,16 @@ public class LIC6Test {
      * INVALID INPUT TESTS
      * Tests that evaluate function raises assertion error when given invalid parameter input.
      */
+    @Test
+    public void assertThatTooFewPointsThrowsException() {
+        Parameters p = new Parameters();
+        p.N_PTS = 4;
+        p.DIST = 1;
+        int NUMPOINTS = 2;
+        double[] POINTSX = {0.0,1.0};
+        double[] POINTSY = {0.0,1.0};
+        assertThrows(AssertionError.class, () -> {(new LIC6()).evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+    }
 
     @Test
     public void assertThatInvalidNPTSRaisesError() {
@@ -38,17 +48,6 @@ public class LIC6Test {
      * FAILING TESTS
      * Tests that evaluate function returns false when input does not satisfy LIC #6.
      */
-
-    @Test
-    public void assertThatTooFewPointsReturnFalse() {
-        Parameters p = new Parameters();
-        p.N_PTS = 4;
-        p.DIST = 1;
-        int NUMPOINTS = 2;
-        double[] POINTSX = {0.0,1.0};
-        double[] POINTSY = {0.0,1.0};
-        assertFalse((new LIC6()).evaluate(p,NUMPOINTS,POINTSX,POINTSY));
-    }
 
     @Test
     public void assertThatDistLessThanDISTReturnsFalse() {

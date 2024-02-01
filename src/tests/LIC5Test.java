@@ -7,19 +7,26 @@ import LIC.LIC5;
 
 public class LIC5Test {
 
+
+    /**
+     * INVALID INPUT TESTS
+     * Tests that evaluate function raises assertion error when given invalid parameter input.
+     */
+    @Test
+    public void assertThatTooFewPointsThrowsException() {
+        Parameters p = new Parameters();
+        int NUMPOINTS = 1;
+        double[] POINTSX = {1.0};
+        double[] POINTSY = {1.0};
+        assertThrows(AssertionError.class, () -> {(new LIC5()).evaluate(p, NUMPOINTS, POINTSX, POINTSY);});
+    }
+    
+
     /*
      * ------ FAILING TESTS ------
      * Tests that the function evaluates to false when supposed to
      */
     
-    @Test
-    public void assertThatTooFewPointsReturnFalse() {
-        Parameters p = new Parameters();
-        int NUMPOINTS = 1;
-        double[] POINTSX = {1.0};
-        double[] POINTSY = {1.0};
-        assertFalse((new LIC5()).evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-    }
     
     @Test
     public void assertThatReturnsFalseForInvalidInput() {
