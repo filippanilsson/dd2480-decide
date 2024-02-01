@@ -102,7 +102,11 @@ Furthermore, we have used pair programming as a collaboration method while imple
 1.
 
 ### Charlotta Johnsson
-1.
+The initial three points were accomplished in collaboration with Filippa using Live Share.
+1. Implemented LIC 0,1,2,3,4,5 
+2. Implemented PUM 
+3. Developed corresponding tests for LIC 0, 1, 2, 3, 4, 5 and the PUM module.
+4. Code reviewing and refactoring.
 
 ### Emil Hultcrantz
 1.
