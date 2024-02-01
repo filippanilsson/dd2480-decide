@@ -12,6 +12,19 @@ public class LIC10Test {
      * Tests that evaluate function raises assertion error when given invalid parameter input.
      */
 
+    @Test 
+    public void assertThatTooFewPointsThrowsException(){
+        p.E_PTS = 1;
+        p.F_PTS = 1;
+        p.AREA1 = 3;
+        int NUMPOINTS = 1;
+
+        double[] POINTSX = {0};
+        double[] POINTSY = {0};
+        LIC10 lic10 = new LIC10();
+        assertThrows(AssertionError.class, () -> {lic10.evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+    }
+
     @Test
     public void assertThatEPTSLessThan1ThrowsException() {
         p.E_PTS = 0;

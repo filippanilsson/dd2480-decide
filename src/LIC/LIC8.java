@@ -21,11 +21,12 @@ public class LIC8 implements LIC {
      * @return a boolean indicating whether LIC 8 is satisfied
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
-        if (NUMPOINTS < 5) return false;
+        assert(NUMPOINTS >= 5);
         assert(1 <= p.A_PTS);
         assert(1 <= p.B_PTS);
         assert(p.A_PTS+p.B_PTS <= NUMPOINTS-3);
         assert(p.RADIUS1 >= 0);
+        
         for (int i = 0; i < NUMPOINTS-p.A_PTS-p.B_PTS-2; i++) {
             double x1 = POINTSX[i];
             double y1 = POINTSY[i];

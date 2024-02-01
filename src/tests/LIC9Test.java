@@ -13,6 +13,18 @@ public class LIC9Test {
      */
 
     @Test
+    public void assertThatTooFewPointsReturnFalse() {
+        p.C_PTS = 1;
+        p.D_PTS = 1;
+        p.EPSILON = 3;
+        int NUMPOINTS = 4;
+
+        double[] POINTSX = {0, 1, 2, 3};
+        double[] POINTSY = {0, 1, 0, 1};
+        assertThrows(AssertionError.class, () -> {(new LIC9()).evaluate(p,NUMPOINTS,POINTSX,POINTSY);});
+    }
+
+    @Test
     public void assertThatCPTSLessThan1RaisesException() {
         p.C_PTS = 0;
         p.D_PTS = 1;
@@ -68,19 +80,6 @@ public class LIC9Test {
      * FAILING TESTS
      * Tests that evaluate function returns false when input does not satisfy LIC #9.
      */
-
-     @Test
-    public void assertThatTooFewPointsReturnFalse() {
-        p.C_PTS = 1;
-        p.D_PTS = 1;
-        p.EPSILON = 3;
-        int NUMPOINTS = 4;
-
-        double[] POINTSX = {0, 1, 2, 3};
-        double[] POINTSY = {0, 1, 0, 1};
-        LIC9 lic9 = new LIC9();
-        assertFalse(lic9.evaluate(p, NUMPOINTS, POINTSX, POINTSY));
-    }
 
     @Test
     public void assertThatInvalidCriteriaReturnFalse() {

@@ -25,9 +25,7 @@ public class LIC9 implements LIC {
     */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
         //Bounder
-        if(NUMPOINTS < 5)
-            return false;
-
+        assert(NUMPOINTS >= 5);
         assert(p.C_PTS >= 1 && p.D_PTS >= 1);
         assert(p.C_PTS + p.D_PTS <= NUMPOINTS - 3);
         assert(p.EPSILON >= 0 && p.EPSILON < Math.PI); 

@@ -19,7 +19,7 @@ public class LIC5 implements LIC {
      */
     public boolean evaluate(Parameters p, int NUMPOINTS, double[] POINTSX, double[] POINTSY) {
 
-        if (NUMPOINTS < 2) return false;
+        assert(NUMPOINTS >= 2);
 
         for (int i = 0; i < NUMPOINTS-1; i++) {
             if (POINTSX[i+1] - POINTSX[i] < 0) return true;
