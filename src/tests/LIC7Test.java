@@ -57,7 +57,7 @@ public class LIC7Test {
     }
 
     /**
-     * FAILING TESTS
+     * NEGATIVE TESTS
      * Tests that evaluate function returns false when input does not satisfy LIC #7.
      */
 

@@ -79,7 +79,7 @@ public class LIC12Test {
     
 
     /*
-     * ------ FAILING TESTS ------
+     * ------ NEGATIVE TESTS ------
      * Tests that the function evaluates to false when supposed to
      */
 

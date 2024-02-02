@@ -40,7 +40,7 @@ public class LIC2Test {
     }
 
     /*
-     * ------ FAILING TESTS ------
+     * ------ NEGATIVE TESTS ------
      * Tests that the function evaluates to false when supposed to
      */
     

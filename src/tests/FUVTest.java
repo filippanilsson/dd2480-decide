@@ -29,7 +29,7 @@ public class FUVTest {
     }
 
     /*
-     * ------ FAILING TESTS ------
+     * ------ NEGATIVE TESTS ------
      * Tests that the function evaluates to a vector of all falses when supposed to
      */
     @Test
