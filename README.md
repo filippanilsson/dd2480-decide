@@ -10,8 +10,9 @@ This repository is home to DECIDE, a software application designed for the hypot
   - **LIC**: Implements the logic for evaluating Launch Interceptor Conditions.
   - **tests**: Houses unit tests corresponding to different components of the application.
   - **PUM**: Implements the Preliminary Unlocking Matrix.
-  - **FUV**: Implements the Final Unlocking Vector (FUV).
-  - **parameters**: Centralizes all parameters required for the application in a single object.
+  - **FUV**: Implements the Final Unlocking Vector.
+  - **decide**: Implements the final launch decision.
+  - **parameters**: Centralizes all parameters required for the Launch Interceptor Conditions in a single object.
 
 - **lib**: Stores external libraries and dependencies.
 
@@ -28,14 +29,26 @@ DECIDE serves as a comprehensive tool for assessing Launch Interceptor Condition
 - **Final Unlocking Vector (FUV):**
   - The `FUV` module, located in the `src` folder, implements the Final Unlocking Vector. It plays a crucial role in the unlocking process, ensuring the final vector is computed accurately.
 
+- **DECIDE:**
+  - The `decide` module, located in the `src` folder, implements the final launch decision.
+
 - **Parameters Management:**
-  - The `parameters` folder consolidates all parameters required by different parts of the application into a single, organized object. This ensures a centralized and easily manageable configuration for the entire system.
+  - The `parameters` folder consolidates all parameters required by the different Launch Interceptor Conditions into a single, organized object. This ensures a centralized and easily manageable configuration for the entire system.
 
 This project is designed with modularity and maintainability in mind, allowing users to understand, test, and extend the functionality efficiently.
 
 ## Specifications
 
-The application relies on a set of parameters that are managed in the `parameters` folder. These parameters include:
+The application relies on the following set of parameters:
+
+- NUMPOINTS: Number of planar data points
+- POINTSX: Array containing the x-coordinates of data points
+- POINTSY: Array containing the y-coordinates of data points
+- LCM: 15x15 boolean 2D-array containing the Logical Connector Matrix
+- PUV: 15-element boolean array containing the Preliminary Unlocking Vector
+- PARAMETERS: Object holding parameters for LICs
+
+The LIC parameters are managed in the `parameters` folder and include:
 
 - LENGTH1: Length in LICs 0, 7 ,12
 - RADIUS1: Radius in LICs 1, 8 ,13
@@ -62,7 +75,7 @@ The application relies on a set of parameters that are managed in the `parameter
 + JDK: 21
 
 ## Way of Working
-By evaluating the [checklist](https://www.omg.org/spec/Essence/1.2/PDF) (available on p.60), we can come to the conclusion that our team is in stage 2, **In Use**. A more detailed assessment of each point of the checklist for the aforementioned stage can be found below.
+By evaluating the [checklist](https://www.omg.org/spec/Essence/1.2/PDF) (available on p.60), we can come to the conclusion that our team is in stage 3, **In Use**. A more detailed assessment of each point of the checklist for the aforementioned stage can be found below.
 
 1. **The practices and tools are being used to do real work.**
 
