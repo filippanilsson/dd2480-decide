@@ -46,7 +46,7 @@ public class LIC4Test {
     }
 
     /**
-     * FAILING TESTS
+     * NEGATIVE TESTS
      * Tests that function returns false when input does not satisfy LIC#4
      */
 

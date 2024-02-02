@@ -35,7 +35,7 @@ public class LIC3Test {
     }
     
     /*
-     * ------ FAILING TESTS ------
+     * ------ NEGATIVE TESTS ------
      * Tests that the function evaluates to false when supposed to
      */
     
