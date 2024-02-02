@@ -6,14 +6,14 @@ import LIC.*;
 import PUM.PUM;
 
 /**
- * Makes the final decision on wheter to allow a launch or not. If the input parameters 
+ * Makes the final decision on whether to allow a launch or not. If the input parameters 
  * are invalid this will throw an exception. Returns it's answer in the form of
  * "YES" or "NO" in standard output.
  */
 public class Decide {
     /**
-     * Decides wheter to allow a launch or not. 
-     * NOTE: Retruns it's answer in the form of "YES" or "NO" in standard output.
+     * Decides whether to allow a launch or not. 
+     * NOTE: Returns its answer in the form of "YES" or "NO" in standard output.
      * @param NUMPOINTS the amount of points
      * @param POINTSX an array of the x-coordinates of all points
      * @param POINTSY an array of the y-coordinates of all points
